@@ -6,7 +6,23 @@ import createAboutContentDiv from './about.js';
 console.log("Hello World from the Restaurant Page project.");
 console.log(document.querySelector('header').offsetHeight);
 
-const contentDiv = document.querySelector('#content');
-const homeContent = createHomeContentDiv();
+function clearContentDiv() {
+    const contentDiv = document.querySelector('#content');
+    contentDiv.innerText = '';
+}
 
-contentDiv.appendChild(homeContent);
+function populate(content) {
+    const contentDiv = document.querySelector('#content');
+    contentDiv.appendChild(content);
+}
+
+function onClick(content) {
+    clearContentDiv();
+    populate(content);
+}
+
+document.querySelector('#home-button') .addEventListener('click', () => onClick(createHomeContentDiv()));
+document.querySelector('#menu-button') .addEventListener('click', () => onClick(createMenuContentDiv()));
+document.querySelector('#about-button').addEventListener('click', () => onClick(createAboutContentDiv()));
+
+onClick(createHomeContentDiv());
