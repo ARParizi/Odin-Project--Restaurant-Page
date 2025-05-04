@@ -1,4 +1,4 @@
-//import './styles.css';
+import './styles.css';
 import createHomeContentDiv from './home.js';
 import createMenuContentDiv from './menu.js';
 import createAboutContentDiv from './about.js';
